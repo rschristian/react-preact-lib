@@ -6,10 +6,8 @@ This runs [`microbundle`](https://github.com/developit/microbundle) in two passe
 
 ## Usage
 
-```
-yarn
-
-yarn build
+```sh
+$ yarn && yarn build
 ```
 
 Generates `./dist/{react,preact}`, each containing a ES5 CJS & ES2017 ESM bundle. Uses `package.json#exports` to expose these bundles, allowing you to access them by doing the following:
