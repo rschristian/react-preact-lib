@@ -1,0 +1,47 @@
+{
+  "name": "my-lib",
+  "type": "module",
+  "license": "MIT",
+  "source": "src/index.jsx",
+  "exports": {
+    "./preact": {
+      "import": "./dist/my-lib.modern.js",
+      "require": "./dist/my-lib.cjs"
+    },
+    "./react": {
+      "import": "./dist/my-lib.modern.js",
+      "require": "./dist/my-lib.cjs"
+    }
+  },
+  "scripts": {
+    "build": "yarn build:preact & yarn build:react",
+    "build:preact": "microbundle -f cjs,modern -o dist/preact --jsxImportSource preact",
+    "build:react": "microbundle -f cjs,modern -o dist/react --jsxImportSource react --alias preact/hooks=react",
+    "format": "prettier --write --ignore-path .gitignore ."
+  },
+  "peerDependencies": {
+    "preact": "^10.5.13",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "peerDependenciesMeta": {
+    "preact": {
+      "optional": true
+    },
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "microbundle": "^0.15.1",
+    "preact": "^10.5.13",
+    "prettier": "^2.0.0",
+    "prettier-config-rschristian": "^0.1.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "prettier": "prettier-config-rschristian"
+}
