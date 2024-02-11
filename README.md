@@ -2,7 +2,7 @@
 
 Tiny template one could use to create a library that supports both React & Preact, without relying upon `preact/compat`.
 
-This runs [`microbundle`](https://github.com/developit/microbundle) in two passes to generate the output for each UI library. To make things a bit simpler, the library is authored in Preact so that we can alias `preact/hooks` to `react` for the React build -- going the other way is a built more difficult as Preact splits up core (such as `Component`) from hooks (`useState`).
+This runs [`microbundle`](https://github.com/developit/microbundle) in two passes to generate the output for each UI library. To make things a bit simpler, the library is authored in Preact so that we can alias `preact/hooks` to `react` for the React build -- going the other way is a bit more difficult as Preact splits up core (such as `Component`) from hooks (`useState`).
 
 ## Usage
 
